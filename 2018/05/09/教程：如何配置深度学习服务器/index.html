@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://EtoDemerzel.disqus.com">
+
+
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            教程：如何配置深度学习服务器 | 
+        
+        My Trantor
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+    <link rel="icon" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="当你拿到一个崭新的服务器账号的时候，你会希望通过这篇文章来快速配置好你所需要的开发环境。
+">
+    <meta name="keywords" content="Deep Learning Data Mining,tutorial,deep learning">
+    <meta name="theme-color" content="#3B4247">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #378bc8;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #3B4247 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #3B4247 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #3B4247 !important;
+  }
+
+  .toTop {
+    background: #c1c4c6 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #c1c4c6;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #c1c4c6;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #c1c4c6;
+  }
+
+  .post-toc a:hover {
+    color: #378bc8;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My Trantor">
+    <meta name="msapplication-starturl" content="https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/">
+    <meta name="msapplication-navbutton-color" content="#3B4247">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="My Trantor">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="Qdr-ePYrpfokzie4PUuT0TfVUd_cjS39wQt624NouvM">
+    <meta name="baidu-site-verification" content="qW1rbkxBrE">
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="教程：如何配置深度学习服务器 | My Trantor">
+    <meta property="og:image" content="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+    <meta property="og:description" content="当你拿到一个崭新的服务器账号的时候，你会希望通过这篇文章来快速配置好你所需要的开发环境。
+">
+    <meta property="og:article:tag" content="tutorial"> <meta property="og:article:tag" content="deep learning"> 
+
+    
+        <meta property="article:published_time" content="Wed May 09 2018 16:59:28 GMT+0800">
+        <meta property="article:modified_time" content="Wed Aug 14 2019 02:59:50 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html",
+    "headline": "教程：如何配置深度学习服务器",
+    "datePublished": "Wed May 09 2018 16:59:28 GMT+0800",
+    "dateModified": "Wed Aug 14 2019 02:59:50 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Weiran Huang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://s1.ax1x.com/2018/09/03/PznIMQ.png"
+        },
+        "description": "My life of code, math and literature"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "My Trantor",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "https://s1.ax1x.com/2018/09/03/PznrKH.png"
+        }
+    },
+    "keywords": ",tutorial,deep learningDeep Learning Data Mining",
+    "description": "当你拿到一个崭新的服务器账号的时候，你会希望通过这篇文章来快速配置好你所需要的开发环境。
+",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-111871163-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<link rel="alternate" href="/atom.xml" title="My Trantor" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接服务器"><span class="post-toc-number">1.</span> <span class="post-toc-text">连接服务器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Anaconda"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Anaconda</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Jupyter-notebook"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置Jupyter notebook</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过Anaconda安装Tensorflow"><span class="post-toc-number">4.</span> <span class="post-toc-text">通过Anaconda安装Tensorflow</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TensorBoard远程使用"><span class="post-toc-number">5.</span> <span class="post-toc-text">TensorBoard远程使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装PyTorch"><span class="post-toc-number">6.</span> <span class="post-toc-text">安装PyTorch</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后记"><span class="post-toc-number">7.</span> <span class="post-toc-text">后记</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://s1.ax1x.com/2018/09/03/PzY5b8.png)">
+    
+            <p class="article-headline-p">
+                教程：如何配置深度学习服务器
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://s1.ax1x.com/2018/09/03/PznIMQ.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Weiran Huang</strong>
+        <span>May 09, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/deep-learning/">deep learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/tutorial/">tutorial</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=教程：如何配置深度学习服务器&url=https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html&pic=https://huangweiran.clubhttps://s1.ax1x.com/2018/09/03/PznrKH.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=教程：如何配置深度学习服务器&url=https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html&via=Weiran Huang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html&title=教程：如何配置深度学习服务器" target="_blank">
+            <li class="mdl-menu__item">
+                Share to LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=My Trantor&title=教程：如何配置深度学习服务器&summary=Machine Learning Python Deep Data Mining Computer Science&pics=https://huangweiran.clubhttps://s1.ax1x.com/2018/09/03/PznrKH.png&url=https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>当你拿到一个崭新的服务器账号的时候，你会希望通过这篇文章来快速配置好你所需要的开发环境。</p>
+<p><a id="more"></a> 不过这篇文章完全是站在<strong>一个拥有服务器账号的非root权限、需要服务器用于深度学习研究开发的普通用户角度</strong>。</p>
+<p><strong>最近一次更新</strong>：2019-08-13</p>
+<h2 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h2><p>初拿到账号，在Windows下首先通过Xshell或者PUTTY连接服务器，我个人倾向于Xshell，PUTTY太老了。<strong>而在2019年8月的当下，我最喜欢的方式是MobaXterm和VS Code的remote工具箱，尤其是后者。</strong><br>老实说，还蛮好奇实验室里的服务器是怎样的配置，于是我们在terminal中输入：</p>
+<pre class=" language-shell"><code class="language-shell">nvidia-smi
+</code></pre>
+<p>就可以看到相关信息。</p>
+<p>我们知道Linux是自带Python2和Python3的，在命令行中输入</p>
+<pre class=" language-powershell"><code class="language-powershell">python <span class="token operator">-</span>V
+</code></pre>
+<p>和</p>
+<pre class=" language-shell"><code class="language-shell">python3 -V
+</code></pre>
+<p>可以分别查看他们的版本。<br>我是习惯使用python3的，我注意到这里它的版本是3.4。<br>我常用的库包括numpy，matplotlib和pandas等，这里经过试验，发现这台机器上python2这几个库都有，而python3似乎只有numpy。另外貌似机器上已经安了Tensorflow，但不知道为什么使用时一直报错，哪怕我试图激活它的虚拟环境。<br>这样的情况下，我决定安装一个python3的Anaconda以图方便，至于Tensorflow之后在Anaconda里的虚拟环境再安一次吧。</p>
+<h2 id="安装Anaconda"><a href="#安装Anaconda" class="headerlink" title="安装Anaconda"></a>安装Anaconda</h2><blockquote>
+<p><strong>PS</strong>: 下述版本已不是当前最新，请自行修改url换成最新版本。</p>
+</blockquote>
+<p>事实上我的安装是参考<a href="https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04" target="_blank" rel="noopener">这篇文章</a>的，这篇文章介绍得非常清楚。但有一点必须注意，文章中下载的URL是这样的：</p>
+<pre class=" language-powershell"><code class="language-powershell">curl <span class="token operator">-</span>O https:<span class="token operator">/</span><span class="token operator">/</span>repo<span class="token punctuation">.</span>continuum<span class="token punctuation">.</span>io<span class="token operator">/</span>archive<span class="token operator">/</span>Anaconda3<span class="token operator">-</span>5<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span class="token operator">-</span>Linux<span class="token operator">-</span>x86_64<span class="token punctuation">.</span>sh
+</code></pre>
+<p>但在国内这个下载速度会非常慢，因此我建议你使用清华开源镜像站：</p>
+<pre class=" language-powershell"><code class="language-powershell">curl <span class="token operator">-</span>O https:<span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>archive<span class="token operator">/</span>Anaconda3<span class="token operator">-</span>5<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span class="token operator">-</span>Linux<span class="token operator">-</span>x86_64<span class="token punctuation">.</span>sh
+</code></pre>
+<p>在两个都尝试过后，我们可以发现后者的速度远胜前者。</p>
+<h2 id="配置Jupyter-notebook"><a href="#配置Jupyter-notebook" class="headerlink" title="配置Jupyter notebook"></a>配置Jupyter notebook</h2><p>接下来进行远程Jupyter notebook的配置，这里主要参考<a href="https://blog.csdn.net/a819825294/article/details/55657496" target="_blank" rel="noopener">这篇博客</a>。文章中描述得很详细，这里不做赘述。只有一点补充，如果是以root用户登陆，在<code>jupyter notebook</code>命令后加上<code>--allow-root</code>即可。 </p>
+<p>完成这个配置之后，你在Linux的命令行里输入<code>jupyter notebook</code>的命令之后，就能在其他终端上通过浏览器（<code>http://(你的服务器地址):(端口名)</code>）访问服务器的Jupyter notebook了。</p>
+<h2 id="通过Anaconda安装Tensorflow"><a href="#通过Anaconda安装Tensorflow" class="headerlink" title="通过Anaconda安装Tensorflow"></a>通过Anaconda安装Tensorflow</h2><p>这次我们可以看<a href="https://www.tensorflow.org/install/install_linux#installing_with_anaconda" target="_blank" rel="noopener">官方的教程</a>中关于使用Anaconda安装的部分，照做的话一般不会出现什么问题。不过这里我同样推荐你使用<a href="https://mirror.tuna.tsinghua.edu.cn/help/tensorflow/" target="_blank" rel="noopener">清华镜像站</a>，不然你可能也会经历慢到怀疑人生的痛苦。</p>
+<p>安装完之后发现仍然不能执行import tensorflow。参考这个<a href="https://stackoverflow.com/questions/36159194/tensorflow-libcudart-so-7-5-cannot-open-shared-object-file-no-such-file-or-di" target="_blank" rel="noopener">StackOverflow</a>的回答，需要在命令行中输入：</p>
+<pre class=" language-shell"><code class="language-shell">source ~/.profile
+</code></pre>
+<p>其他常见的报错在官网上（即上面的链接）都给出了相应的StackOverflow链接。</p>
+<p>但这么做之后候我依然得到了报错，信息如下：</p>
+<pre class=" language-shell"><code class="language-shell">ImportError: libcudnn.so.6: cannot open shared object file: No such file or directory
+</code></pre>
+<p>这个原因是我的cuDNN版本不够的原因，因此我决定使用更低版本的Tensorflow。经过询问学长，cuDNN 5.0应该使用1.2版本的tensorflow，因此我们在命令行输入：</p>
+<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ --upgrade tensorflow-gpu==1.2.1
+</code></pre><p>注意以上的安装我们使用了清华镜像。这样一来就终于可以使用Tensorflow了。当然每次使用前，要记得激活你的tensorflow环境。</p>
+<h2 id="TensorBoard远程使用"><a href="#TensorBoard远程使用" class="headerlink" title="TensorBoard远程使用"></a>TensorBoard远程使用</h2><p>TensorBoard是TensorFlow中用于分析和调试神经网络模型的可视化框架，它将所谓的<strong>汇总（summary）</strong>和<strong>操作</strong>联系起来。</p>
+<p>我们以一个单输入神经元为例：</p>
+<pre class=" language-python"><code class="language-python">input_value <span class="token operator">=</span> tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">'input_value'</span><span class="token punctuation">)</span>
+weight <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">'weight'</span><span class="token punctuation">)</span>
+expected_output <span class="token operator">=</span> tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">'expected_output'</span><span class="token punctuation">)</span>
+model <span class="token operator">=</span> tf<span class="token punctuation">.</span>multiply<span class="token punctuation">(</span>input_value<span class="token punctuation">,</span> weight<span class="token punctuation">,</span> <span class="token string">"model"</span><span class="token punctuation">)</span>
+loss_function <span class="token operator">=</span> tf<span class="token punctuation">.</span>pow<span class="token punctuation">(</span>expected_output <span class="token operator">-</span> model<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">"loss_function"</span><span class="token punctuation">)</span>
+
+optimizer <span class="token operator">=</span> tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate <span class="token operator">=</span> <span class="token number">0.025</span><span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_function<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> value <span class="token keyword">in</span> <span class="token punctuation">[</span>input_value<span class="token punctuation">,</span> weight<span class="token punctuation">,</span> expected_output<span class="token punctuation">,</span> model<span class="token punctuation">,</span> loss_function<span class="token punctuation">]</span><span class="token punctuation">:</span>
+    tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>scalar<span class="token punctuation">(</span>value<span class="token punctuation">.</span>op<span class="token punctuation">.</span>name<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+
+summaries <span class="token operator">=</span> tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>merge_all<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sess <span class="token operator">=</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+summary_writer <span class="token operator">=</span> tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>FileWriter<span class="token punctuation">(</span><span class="token string">'log_simple_stats'</span><span class="token punctuation">,</span> sess<span class="token punctuation">.</span>graph<span class="token punctuation">)</span>
+
+sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    summary_writer<span class="token punctuation">.</span>add_summary<span class="token punctuation">(</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>summaries<span class="token punctuation">)</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span>
+    sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>optimizer<span class="token punctuation">)</span>
+</code></pre>
+<p>这里我们生成了一个日志文件，<code>log_simple_stats</code>。运行TensorBoard只需要在终端中输入以下命令：</p>
+<pre class=" language-shell"><code class="language-shell">tensorboard --logdir=log_simple_stats
+</code></pre>
+<p>终端将输出：</p>
+<pre class=" language-shell"><code class="language-shell">staring tensorboard on port 6006
+</code></pre>
+<p>如果是在本机上，你只需要在chrome浏览器中输入地址<code>localhost:6006</code>即可使用；但如果你是在自己的机器上访问服务器的TensorBoard，可以参考<a href="https://stackoverflow.com/questions/38464559/how-to-locally-view-tensorboard-of-remote-server" target="_blank" rel="noopener">这个StackOverflow回答</a>。</p>
+<h2 id="安装PyTorch"><a href="#安装PyTorch" class="headerlink" title="安装PyTorch"></a>安装PyTorch</h2><p><strong>Updated on Nov.20th</strong></p>
+<p>上周敲定了明年暑假去NUS的暑研，马学长建议我提前做些准备，包括到时候工作的一些前期调研，以及熟悉他们的工具。他们习惯使用的是Pytorch，因此我打算利用平时的时间学习一下。（<strong>2019年夏天更新：NUS暑研吹了，我跑来美国了……</strong>）</p>
+<p>Pytorch官网的下载地址在<a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">这里</a>。但很可惜在国内用Anaconda下载速度非常堪忧，我试图添加清华源但是实际下载的时候显示pytorch并不是使用的清华源。</p>
+<p>这个问题我没能解决，因此我直接换用<code>pip</code>了。</p>
+<p><code>pip</code>也需要将清华源设为默认：</p>
+<pre class=" language-shell"><code class="language-shell">pip install pip -U
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre>
+<p>这样之后只需要简单的<code>pip install torch torchvision</code>就可以了，速度非常让人满意。（这条命令在我使用的当下默认的是python3.6和cuda9.0，其他版本需要指定，具体参考上面的pytorch官网）</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>整个配置过程实在有些曲折，日后有什么与此相关的配置经验我也会更新在这篇博客中。</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                        </strong>
+                        <br>
+                        <strong>Link to this article: </strong><a href="https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/">https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://huangweiran.club/2018/05/09/教程：如何配置深度学习服务器/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//EtoDemerzel.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/05/14/翻译：如何在Jupyter-notebook中安装Python包？/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://s1.ax1x.com/2018/09/03/PzuCZR.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://s1.ax1x.com/2018/09/03/PznIMQ.png" alt="Weiran Huang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huangweiran1998@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="huangweiran1998@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Literature/">Literature<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ML/">ML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/all/">all<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/math/">math<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/tech/">tech<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/wiki" title="Wiki">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                Wiki
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://huangweiran.club/online-cv/" title="Online CV">
+                
+                    <i class="material-icons sidebar-material-icons">portrait</i>
+                
+                Online CV
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">19</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/profile.php?id=100006603762815" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+        <a href="https://www.instagram.com/etodemerzel0427/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <span class="visuallyhidden">Instagram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/EtoDemerzel0427" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="https://www.linkedin.com/in/weiranhuang/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;My Trantor
+            
+                <br>
+                
+                    Act Justly, Love Mercy, Walk Humbly.
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//EtoDemerzel.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2018;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://EtoDemerzel.disqus.com">
+
+
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            CS 224N: Assignment #1 | 
+        
+        My Trantor
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+    <link rel="icon" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Machine Learning Python Deep Data Mining Computer Science">
+    <meta name="keywords" content="Deep Learning Data Mining,NLP,Deep Learning">
+    <meta name="theme-color" content="#3B4247">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #378bc8;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #3B4247 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #3B4247 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #3B4247 !important;
+  }
+
+  .toTop {
+    background: #c1c4c6 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #c1c4c6;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #c1c4c6;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #c1c4c6;
+  }
+
+  .post-toc a:hover {
+    color: #378bc8;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My Trantor">
+    <meta name="msapplication-starturl" content="https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/">
+    <meta name="msapplication-navbutton-color" content="#3B4247">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="My Trantor">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="Qdr-ePYrpfokzie4PUuT0TfVUd_cjS39wQt624NouvM">
+    <meta name="baidu-site-verification" content="qW1rbkxBrE">
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="CS 224N: Assignment #1 | My Trantor">
+    <meta property="og:image" content="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+    <meta property="og:description" content="Machine Learning Python Deep Data Mining Computer Science">
+    <meta property="og:article:tag" content="NLP"> <meta property="og:article:tag" content="Deep Learning"> 
+
+    
+        <meta property="article:published_time" content="Thu Aug 30 2018 14:15:27 GMT+0800">
+        <meta property="article:modified_time" content="Mon Sep 02 2019 18:13:40 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html",
+    "headline": "CS 224N: Assignment #1",
+    "datePublished": "Thu Aug 30 2018 14:15:27 GMT+0800",
+    "dateModified": "Mon Sep 02 2019 18:13:40 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Weiran Huang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://s1.ax1x.com/2018/09/03/PznIMQ.png"
+        },
+        "description": "My life of code, math and literature"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "My Trantor",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "https://s1.ax1x.com/2018/09/03/PznrKH.png"
+        }
+    },
+    "keywords": ",NLP,Deep LearningDeep Learning Data Mining",
+    "description": "Machine Learning Python Deep Data Mining Computer Science",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-111871163-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<link rel="alternate" href="/atom.xml" title="My Trantor" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Word2vec-Summary"><span class="post-toc-number">1.</span> <span class="post-toc-text">Word2vec Summary</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Word2vec：iteration-based"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Word2vec：iteration based</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CBOW"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">CBOW</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Skip-gram"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Skip-gram</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Negative-Sampling"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Negative Sampling</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Hierarchical-Softmax"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Hierarchical Softmax</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-Softmax"><span class="post-toc-number">2.</span> <span class="post-toc-text">1. Softmax</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-Neural-Network-Basics"><span class="post-toc-number">3.</span> <span class="post-toc-text">2. Neural Network Basics</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-word2vec"><span class="post-toc-number">4.</span> <span class="post-toc-text">3. word2vec</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://s1.ax1x.com/2018/09/03/PzKOvF.png)">
+    
+            <p class="article-headline-p">
+                CS 224N: Assignment #1
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://s1.ax1x.com/2018/09/03/PznIMQ.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Weiran Huang</strong>
+        <span>Aug 30, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Deep-Learning/">Deep Learning</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/NLP/">NLP</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CS 224N: Assignment #1&url=https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html&pic=https://huangweiran.clubhttps://s1.ax1x.com/2018/09/03/PznrKH.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CS 224N: Assignment #1&url=https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html&via=Weiran Huang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html&title=CS 224N: Assignment #1" target="_blank">
+            <li class="mdl-menu__item">
+                Share to LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=My Trantor&title=CS 224N: Assignment #1&summary=Machine Learning Python Deep Data Mining Computer Science&pics=https://huangweiran.clubhttps://s1.ax1x.com/2018/09/03/PznrKH.png&url=https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="Word2vec-Summary"><a href="#Word2vec-Summary" class="headerlink" title="Word2vec Summary"></a>Word2vec Summary</h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ol>
+<li><p>One-hot没有在表达中体现词的相似度，并且空间浪费。</p>
+</li>
+<li><p>SVD-based的方法是先构造cooccurrence矩阵（这个共同出现可能会被限制在某个window范围内），然后对矩阵使用SVD分解，取前k个奇异值得到矩阵 $U$ 就得到每个词的k维表达。但这种做法弊端明显：</p>
+<ul>
+<li><p>新词的出现和语料的改变会造成矩阵尺寸频繁变化。</p>
+</li>
+<li><p>矩阵非常稀疏，并且维度通常很大。</p>
+</li>
+<li><p>SVD分解有平方级的开销，而我们刚刚说矩阵的维度很大，因此这个开销会很恼人。</p>
+</li>
+<li><p>需要对不同词语出现频率悬殊做额外处理。</p>
+</li>
+</ul>
+<p>有一些针对的解决办法，但不够好。</p>
+</li>
+</ol>
+<h3 id="Word2vec：iteration-based"><a href="#Word2vec：iteration-based" class="headerlink" title="Word2vec：iteration based"></a>Word2vec：iteration based</h3><p>word2vec的参数就是词向量矩阵本身，它通过迭代的方式训练。它包括两种算法：连续词袋模型（CBOW）和skip-gram。前者通过上下文预测中心词，后者反之。训练方法也有两种：负采样和层次softmax。</p>
+<h3 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h3><p>$U$ 为输出矩阵，在这里即中心词的embedding矩阵；$V$ 为输入矩阵，在这里是上下文词语的embedding矩阵。</p>
+<p>算法流程如下：</p>
+<ol>
+<li>取窗口内（窗口大小为m）的词语的one-hot vector。</li>
+<li>对其在矩阵 $V$ 中做embedding lookup操作（其实就是每个vector乘上这个矩阵），得到2m个词向量。</li>
+<li>直接对这2m个向量取平均。（这也是为什么它被称作连续词袋模型，它仍然不考虑这些词语的顺序，像把词向量的每个维度当成了袋子一样收集每个词提供的信息。）</li>
+<li>把这个向量与 $U$ 相乘，实际上就是和每个中心词做了内积，然后对得到的向量做softmax，就是我们得到的概率值。</li>
+</ol>
+<p>loss function为这个概率和实际结果（其实是一个one-hot vector，可以认为它在正确结果处概率为1）的交叉熵。交叉熵是信息论中的概念，可以用来刻画两个分布的不同。由于真实分布只在一个点处有取值，且是1，<strong>其实这个交叉熵就是输出概率值在正确类对应的index上的熵</strong>。</p>
+<p>故我们的优化目标是：</p>
+
+$$
+\begin{aligned} \text { minimize } J &=-\log P\left(w_{c} | w_{c-m}, \ldots, w_{c-1}, w_{c+1}, \ldots, w_{c+m}\right) \\ &=-\log P\left(u_{c} | \hat{v}\right) \\ &=-\log \frac{\exp \left(u_{c}^{T} \hat{v}\right)}{\sum_{j=1}^{|V|} \exp \left(u_{j}^{T} \hat{v}\right)} \\ &=-u_{c}^{T} \hat{v}+\log \sum_{j=1}^{|V|} \exp \left(u_{j}^{T} \hat{v}\right) \end{aligned}
+$$
+
+<p>接下来的工作交给SGD。</p>
+<h3 id="Skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h3><p>$U,V$ 仍然分别代表输出和输入矩阵，只是他们代表的词语位置和刚才相反。</p>
+<p>算法流程和上面基本类似，这里简单描述：</p>
+<ol>
+<li>用中心词的one-hot vector获取其embedding。</li>
+<li>与output matrix相乘，再做softmax。</li>
+<li>用得到的概率向量和真实输出（就是一个只有窗口范围内是1，其余都是0的向量）做交叉熵，作为loss。</li>
+</ol>
+
+$$
+\begin{aligned} \text { minimize } J &=-\log P\left(w_{c-m}, \ldots, w_{c-1}, w_{c+1}, \ldots, w_{c+m} | w_{c}\right) \\ &=-\log \prod_{j=0, j \neq m}^{2 m} P\left(w_{c-m+j} | w_{c}\right) \\ &=-\log \prod_{j=0, j \neq m}^{2 m} P\left(u_{c-m+j} | v_{c}\right) \\ &=-\log \prod_{j=0, j \neq m}^{2 m} \frac{\exp \left(u_{c-m+j}^{T} v_{c}\right)}{\sum_{k=1}^{|V|} \exp \left(u_{k}^{T} v_{c}\right)} \\ &=-\sum_{j=0, j \neq m}^{2 m} u_{c-m+j}^{T} v_{c}+2 m \log \sum_{k=1}^{|V|} \exp \left(u_{k}^{T} v_{c}\right) \end{aligned}
+$$
+
+<h3 id="Negative-Sampling"><a href="#Negative-Sampling" class="headerlink" title="Negative Sampling"></a>Negative Sampling</h3><p>注意到上面的算法中softmax开销非常大。为了缩小这个开销我们可以考虑不直接求，而是取近似。</p>
+<p>直觉上，我们softmax的目标是让窗口内的上下文词语输出大，而让其他词语输出小。把窗口内的词语当作正样本，其他词语当作负样本，如果我们进行负采样的话，在目标函数中同时令前者产生的概率大，后者产生的概率小，就近似达到目标效果了。</p>
+<p>这里我们把刻画一个样本的概率函数换为sigmoid，采用最大似然的方法设计loss function，能得到如下式子：</p>
+
+$$
+J=-\sum_{(w, c) \in D} \log \frac{1}{1+\exp \left(-u_{w}^{T} v_{c}\right)}-\sum_{(w, c) \in D} \log \left(\frac{1}{1+\exp \left(u_{w}^{T} v_{c}\right)}\right)
+$$
+
+<p>具体地，对于skip-gram，在上下文词语 $c-m+j$ 上的目标函数是：</p>
+
+$$
+-\log \sigma\left(u_{c-m+j}^{T} \cdot v_{c}\right)-\sum_{k=1}^{K} \log \sigma\left(-\tilde{u}_{k}^{T} \cdot v_{c}\right)
+$$
+
+<p>CBOW类似。</p>
+<p>K个负样本是从某种分布中抽取的。经验上来说这个分布使用$\dfrac{3}{4}$次方的unigram模型是最好的。选取$\dfrac{3}{4}$的原因简单来说就是对于接近1的数，它的值基本维持，但对于很小的数，它的值会变大，能使它更容易被采样到。对于像”is”（0.9）这样的词语，在这样的情况下变化就很小，而像“bombastic”（0.01）则能获得3倍于之前的采样概率。</p>
+<h3 id="Hierarchical-Softmax"><a href="#Hierarchical-Softmax" class="headerlink" title="Hierarchical Softmax"></a>Hierarchical Softmax</h3><p>通过构造一棵二叉树的办法来使得每次获得某一个词的概率时不用遍历整个词典。这棵树上叶子节点表示一个词，除了根节点和叶子节点，每一个中间节点都有一个自己的embedding。在给定一个vector的情况下，要求概率需要遍历从根节点到该词所对应的叶子节点的路径，累乘到达每个中间节点的概率。这个概率用sigmoid表示，且每条路径上下一步如果选择左子节点，概率为P(X=1)的情况，右子节点则为P(X=0)的情况，这样实际上也是一种normalization，保证概率之和为1。</p>
+<p>这个方法的速度取决于树是如何构造的。在Mikolov的论文中他们使用的树是哈夫曼树，这种树的特点是会给出现频率高的叶子节点更短的路径。</p>
+<p>接下来是作业的部分。经过对比，我认为2019以前的第一次作业要比2019的这个作业有趣一些，因此我选择了旧版本的第一个编程作业来完成。</p>
+<h2 id="1-Softmax"><a href="#1-Softmax" class="headerlink" title="1. Softmax"></a>1. Softmax</h2><blockquote>
+<p> (a) Prove that softmax is invariant to constant offsets in the input, that is, for any input vector $\bf{x}$ and any constant $c$<br>$$<br>\mathbf{softmax}(\mathbf{x}) = \mathbf{softmax}(\mathbf{x} + c)<br>$$<br>where $ \bf{x} + c$ means adding the constant $c$ to every dimension of $\bf{x}$. Remember that  $$\mathbf{softmax}(\mathbf{x})_i = \dfrac{e^{x_i}}{\sum_j e^{x_j}}$$</p>
+</blockquote>
+<p>这个证明是显然的，我们只需要在softmax的分子分母中同时乘上 $e^c$这一项即可。但这个性质在我们实现softmax的时候非常重要。</p>
+<p>考虑这样的情形，你需要对 $\mathbf{x} = [1001, 1002]$ 做softmax运算，但 $e^{1001}$ 毫无疑问是溢出的。但对于softmax而言，$[1001, 1002]$ 和 $[1,2]$ 又有什么区别呢？因此实际实现的时候，我们通常取 $c = - \mathbf{max}\space x_i$  以保证数值上的稳定。</p>
+<blockquote>
+<p>(b) Given an input matrix of N rows and D columns, compute the softmax prediction for each row using the optimization in part (a). Write your implementation in <code>q1_softmax.py</code>. You may test by executing python <code>q1_softmax.py</code>.</p>
+</blockquote>
+<p>代码如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">softmax</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Compute the softmax function for each row of the input x.
+
+    You should also make sure that your code works for a single
+    D-dimensional vector (treat the vector as a single row) and
+    for N x D matrices. This may be useful for testing later. Also,
+    make sure that the dimensions of the output match the input.
+
+
+
+    Arguments:
+    x -- A D dimensional vector or N x D dimensional numpy matrix.
+
+    Return:
+    x -- You are allowed to modify x in-place
+    """</span>
+    orig_shape <span class="token operator">=</span> x<span class="token punctuation">.</span>shape
+
+    <span class="token keyword">if</span> len<span class="token punctuation">(</span>x<span class="token punctuation">.</span>shape<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Matrix</span>
+
+        <span class="token comment" spellcheck="true"># scale down</span>
+        x_max <span class="token operator">=</span> np<span class="token punctuation">.</span>max<span class="token punctuation">(</span>x<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+        x <span class="token operator">-=</span> x_max
+
+        <span class="token comment" spellcheck="true"># softmax process</span>
+        x <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        exp_sum <span class="token operator">=</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>x<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+        x <span class="token operator">/=</span> exp_sum
+
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Vector</span>
+
+        <span class="token comment" spellcheck="true"># scale down</span>
+        x_max <span class="token operator">=</span> np<span class="token punctuation">.</span>max<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        x <span class="token operator">-=</span> x_max
+
+        <span class="token comment" spellcheck="true"># softmax process</span>
+        x <span class="token operator">=</span> np<span class="token punctuation">.</span>exp<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        x <span class="token operator">/=</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+
+    <span class="token keyword">assert</span> x<span class="token punctuation">.</span>shape <span class="token operator">==</span> orig_shape
+    <span class="token keyword">return</span> x
+</code></pre>
+<h2 id="2-Neural-Network-Basics"><a href="#2-Neural-Network-Basics" class="headerlink" title="2. Neural Network Basics"></a>2. Neural Network Basics</h2><blockquote>
+<p>(a) Derive the gradients of the sigmoid function and show that it can be rewritten as a function of the function value (i.e., in some expression where only $\sigma(x)$, but not $x$, is present). Assume that the input $x$ is a scalar for this question. Recall, the sigmoid function is $\sigma(x) = \dfrac{1} {1 + e^{−x}}$ .</p>
+</blockquote>
+<p>这个推导非常简单：$(\sigma(x))’ = \sigma(x)(1 - \sigma(x))$。</p>
+<blockquote>
+<p>(b) ) Derive the gradient with regard to the inputs of a softmax function when <strong>cross entropy loss</strong> is used for evaluation, i.e., find the gradients with respect to the softmax input vector $\theta$, when the prediction is made by $\hat{y} = \mathbf{softmax}(\theta)$. Remember the cross entropy function is<br>$$<br>\mathbf{CE}(\mathbf{y}, \mathbf{\hat{y}}) = -\sum_i y_i\log \hat{y}_i<br>$$<br> where $\mathbf{y}$ is the one-hot label vector, and $\mathbf{\hat{y}}$ is the predicted probability vector for all classes.</p>
+</blockquote>
+<p>我们知道 $\mathbf{y}$ 是一个one-hot label vector，这就是说它只有一项是 $1$ , 其余项均为  $0$ 。设 $\mathbf{y}$ 的第 $i$ 项为 $1$.</p>
+<p>对第 $i$ 项： $\dfrac{\partial{\mathbf{CE}}}{\partial{\theta_i}} = \dfrac{\partial{\mathbf{CE}}}{\partial{\hat{y_i}}} \dfrac{\partial{\hat{y_i}}}{\partial{\theta_i}} = -\dfrac{1}{\hat{y_i}}\dfrac{\partial \space\mathbf{softmax}(\theta)_i} {\partial \theta_i}$</p>
+<p> 而 $\dfrac{\partial \space\mathbf{softmax}(\theta)_i} {\partial \theta_i}  =  \dfrac{e^{\theta_i}(\sum_j e^{\theta_j}) - e^{\theta_i}e^{\theta_i}}{(\sum_j e^{\theta_j})^2}= \mathbf{softmax}(\theta)_i(1 - \mathbf{softmax}(\theta)_i) = \hat{y_i}(1-\hat{y_i})$</p>
+<p>故 $\dfrac{\partial{\mathbf{CE}}}{\partial{\theta}_i} = \hat{y_i} - 1$</p>
+<p>对第 $j \not = i$ 项： $\dfrac{\partial{\mathbf{CE}}}{\partial{\theta_j}} = \dfrac{\partial{\mathbf{CE}}}{\partial{\hat{y_i}}} \dfrac{\partial{\hat{y_i}}}{\partial{\theta_j}} = -\dfrac{1}{\hat{y_i}}\dfrac{\partial \space\mathbf{softmax}(\theta)_i} {\partial \theta_j}$</p>
+<p>而 $\dfrac{\partial \space\mathbf{softmax}(\theta)_i} {\partial \theta_j} = \dfrac{0(\sum_j e^{x_j}) - e^{x_j}e^{x_i}}{(\sum_j e^{x_j})^2} = -\hat{y_i}\hat{y_j}$</p>
+<p>故 $\dfrac{\partial{\mathbf{CE}}}{\partial{\theta}_j} = \hat{y_j} = \hat{y_j} - 0$</p>
+<p>可以看出两种情况可以综合为 $\hat{y_i} - y_i$ 的形式，则<br>$$<br>\dfrac{\partial{\mathbf{CE}}}{\partial{\theta}} = \hat{y} - y<br>$$</p>
+<blockquote>
+<p>(c) Derive the gradients with respect to the inputs x to an one-hidden-layer neural network (that is, find $\dfrac{\partial{J}}{\partial{x}}$ where $J = \mathbf{CE}(y, \hat{y})$ is the cost function for the neural network). The neural network employs sigmoid activation function for the hidden layer, and softmax for the output layer. Assume the one-hot label vector is y, and cross entropy cost is used. (Feel free to use $\sigma ‘ (x)$ as the shorthand for sigmoid gradient, and feel free to define any variables whenever you see fit.) </p>
+</blockquote>
+
+
+根据题意，我们有这样一个两层神经网络：
+$$
+\boldsymbol{h}=\operatorname{sigmoid}\left(\boldsymbol{x} \boldsymbol{W}_{1}+\boldsymbol{b}_{1}\right) \quad \hat{\boldsymbol{y}}=\operatorname{softmax}\left(\boldsymbol{h} \boldsymbol{W}_{2}+\boldsymbol{b}_{2}\right)
+$$
+
+
+
+记 $z_{1} = \boldsymbol{xW}_{1} + \boldsymbol{b}_{1}$ ， $z_{2} = \boldsymbol{hW}_{2} + \boldsymbol{b}_{2}$；
+$$
+\begin{aligned} \boldsymbol{\delta}_{1} &=\frac{\partial C E}{\partial z_{2}}=\hat{\boldsymbol{y}}-\boldsymbol{y} \\ \boldsymbol{\delta}_{2} &=\frac{\partial C E}{\partial \boldsymbol{h}}=\boldsymbol{\delta}_{1} \frac{\partial \boldsymbol{z}_{2}}{\partial \boldsymbol{h}}=\boldsymbol{\delta}_{1} \boldsymbol{W}_{2}^{\top} \\ \boldsymbol{\delta}_{3} &=\frac{\partial C E}{\boldsymbol{z}_{1}}=\boldsymbol{\delta}_{2} \frac{\partial \boldsymbol{h}}{\partial \boldsymbol{z}_{1}}=\boldsymbol{\delta}_{2} \circ \sigma^{\prime}\left(\boldsymbol{z}_{1}\right) \\ \frac{\partial C E}{\partial \boldsymbol{x}} &=\boldsymbol{\delta}_{3} \frac{\partial \boldsymbol{z}_{1}}{\partial \boldsymbol{x}}=\boldsymbol{\delta}_{3} \boldsymbol{W}_{1}^{\top} \end{aligned}
+$$
+
+<p>这个神经网络有 $ (D_x + 1) \cdot H + (H + 1) \cdot D_y$个参数。</p>
+<p>接下来是完成这个网络的代码。先完成<code>gradient_check</code>的部分：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># First implement a gradient checker by filling in the following functions</span>
+<span class="token keyword">def</span> <span class="token function">gradcheck_naive</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" Gradient check for a function f.
+
+    Arguments:
+    f -- a function that takes a single argument and outputs the
+         cost and its gradients
+    x -- the point (numpy array) to check the gradient at
+    """</span>
+
+    rndstate <span class="token operator">=</span> random<span class="token punctuation">.</span>getstate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    random<span class="token punctuation">.</span>setstate<span class="token punctuation">(</span>rndstate<span class="token punctuation">)</span>
+    fx<span class="token punctuation">,</span> grad <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Evaluate function value at original point</span>
+    h <span class="token operator">=</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">4</span>        <span class="token comment" spellcheck="true"># Do not change this!</span>
+
+    <span class="token comment" spellcheck="true"># Iterate over all indexes ix in x to check the gradient.</span>
+    it <span class="token operator">=</span> np<span class="token punctuation">.</span>nditer<span class="token punctuation">(</span>x<span class="token punctuation">,</span> flags<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'multi_index'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> op_flags<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'readwrite'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token operator">not</span> it<span class="token punctuation">.</span>finished<span class="token punctuation">:</span>
+        ix <span class="token operator">=</span> it<span class="token punctuation">.</span>multi_index
+
+        x<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">+=</span> h
+        fx_forward<span class="token punctuation">,</span> _ <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+        x<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token number">2</span><span class="token operator">*</span>h
+        fx_backward<span class="token punctuation">,</span> _ <span class="token operator">=</span> f<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+        x<span class="token punctuation">[</span>ix<span class="token punctuation">]</span> <span class="token operator">+=</span> h
+
+        numgrad <span class="token operator">=</span> <span class="token punctuation">(</span>fx_forward <span class="token operator">-</span> fx_backward<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> h<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># Compare gradients</span>
+        reldiff <span class="token operator">=</span> abs<span class="token punctuation">(</span>numgrad <span class="token operator">-</span> grad<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> max<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> abs<span class="token punctuation">(</span>numgrad<span class="token punctuation">)</span><span class="token punctuation">,</span> abs<span class="token punctuation">(</span>grad<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> reldiff <span class="token operator">></span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span> <span class="token string">"Gradient check failed."</span>
+            <span class="token keyword">print</span> <span class="token string">"First gradient error found at index %s"</span> <span class="token operator">%</span> str<span class="token punctuation">(</span>ix<span class="token punctuation">)</span>
+            <span class="token keyword">print</span> <span class="token string">"Your gradient: %f \t Numerical gradient: %f"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>
+                grad<span class="token punctuation">[</span>ix<span class="token punctuation">]</span><span class="token punctuation">,</span> numgrad<span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+
+        it<span class="token punctuation">.</span>iternext<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># Step to next dimension</span>
+
+    <span class="token keyword">print</span> <span class="token string">"Gradient check passed!"</span>
+</code></pre>
+<p>然后完成这个二层MLP的的函数：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">forward_backward_prop</span><span class="token punctuation">(</span>X<span class="token punctuation">,</span> labels<span class="token punctuation">,</span> params<span class="token punctuation">,</span> dimensions<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Forward and backward propagation for a two-layer sigmoidal network
+
+    Compute the forward propagation and for the cross entropy cost,
+    the backward propagation for the gradients for all parameters.
+
+    Notice the gradients computed here are different from the gradients in
+    the assignment sheet: they are w.r.t. weights, not inputs.
+
+    Arguments:
+    X -- M x Dx matrix, where each row is a training example x.
+    labels -- M x Dy matrix, where each row is a one-hot vector.
+    params -- Model parameters, these are unpacked for you.
+    dimensions -- A tuple of input dimension, number of hidden units
+                  and output dimension
+    """</span>
+
+    <span class="token comment" spellcheck="true"># Unpack network parameters</span>
+    ofs <span class="token operator">=</span> <span class="token number">0</span>
+    Dx<span class="token punctuation">,</span> H<span class="token punctuation">,</span> Dy <span class="token operator">=</span> <span class="token punctuation">(</span>dimensions<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dimensions<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dimensions<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    W1 <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>params<span class="token punctuation">[</span>ofs<span class="token punctuation">:</span>ofs<span class="token operator">+</span> Dx <span class="token operator">*</span> H<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>Dx<span class="token punctuation">,</span> H<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ofs <span class="token operator">+=</span> Dx <span class="token operator">*</span> H
+    b1 <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>params<span class="token punctuation">[</span>ofs<span class="token punctuation">:</span>ofs <span class="token operator">+</span> H<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> H<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ofs <span class="token operator">+=</span> H
+    W2 <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>params<span class="token punctuation">[</span>ofs<span class="token punctuation">:</span>ofs <span class="token operator">+</span> H <span class="token operator">*</span> Dy<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>H<span class="token punctuation">,</span> Dy<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    ofs <span class="token operator">+=</span> H <span class="token operator">*</span> Dy
+    b2 <span class="token operator">=</span> np<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>params<span class="token punctuation">[</span>ofs<span class="token punctuation">:</span>ofs <span class="token operator">+</span> Dy<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> Dy<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># Note: compute cost based on `sum` not `mean`.</span>
+    <span class="token comment" spellcheck="true"># forward propagation</span>
+    h <span class="token operator">=</span> sigmoid<span class="token punctuation">(</span>X<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>W1<span class="token punctuation">)</span> <span class="token operator">+</span> b1<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># N x H</span>
+    yhat <span class="token operator">=</span> softmax<span class="token punctuation">(</span>h<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>W2<span class="token punctuation">)</span> <span class="token operator">+</span> b2<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># N x Dy</span>
+
+    cost <span class="token operator">=</span> <span class="token operator">-</span>np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>np<span class="token punctuation">.</span>log<span class="token punctuation">(</span>yhat<span class="token punctuation">[</span>np<span class="token punctuation">.</span>where<span class="token punctuation">(</span>labels<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># backward propagation</span>
+    gradz2 <span class="token operator">=</span> <span class="token punctuation">(</span>yhat <span class="token operator">-</span> labels<span class="token punctuation">)</span>
+    gradW2 <span class="token operator">=</span> <span class="token punctuation">(</span>h<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">.</span>dot<span class="token punctuation">(</span>gradz2<span class="token punctuation">)</span>
+    gradb2 <span class="token operator">=</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>gradz2<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+    gradh <span class="token operator">=</span> np<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>gradz2<span class="token punctuation">,</span> W2<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+    gradz1 <span class="token operator">=</span> sigmoid_grad<span class="token punctuation">(</span>h<span class="token punctuation">)</span> <span class="token operator">*</span> gradh
+
+    gradW1 <span class="token operator">=</span> <span class="token punctuation">(</span>X<span class="token punctuation">.</span>T<span class="token punctuation">)</span><span class="token punctuation">.</span>dot<span class="token punctuation">(</span>gradz1<span class="token punctuation">)</span>
+    gradb1 <span class="token operator">=</span> np<span class="token punctuation">.</span>sum<span class="token punctuation">(</span>gradz1<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> keepdims<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+
+    <span class="token comment" spellcheck="true"># Stack gradients</span>
+    grad <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>gradW1<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> gradb1<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        gradW2<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> gradb2<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> cost<span class="token punctuation">,</span> grad
+</code></pre>
+<h2 id="3-word2vec"><a href="#3-word2vec" class="headerlink" title="3. word2vec"></a>3. word2vec</h2><blockquote>
+<p>(a) Assume you are given a predicted word vector $v_c$  corresponding to the center word $c$ for<br>and word prediction is made with the softmax function found in word2vec models<br>$$<br>\hat{\boldsymbol{y}}_{o}=p(\boldsymbol{o} | \boldsymbol{c})=\frac{\exp \left(\boldsymbol{u}_{o}^{\top} \boldsymbol{v}_{c}\right)}{\sum_{w=1}^{W} \exp \left(\boldsymbol{u}_{w}^{\top} \boldsymbol{v}_{c}\right)} <br>$$<br>where w denotes the $w$-th word and $u_w$ ($w = 1, \ldots, W $) are the “output” word vectors for all words in<br>the vocabulary. Assume cross entropy cost is applied to this prediction and word o is the expected word<br>(the $o$-th element of the one-hot label vector is one), derive the gradients with respect to $v_c$.</p>
+</blockquote>
+<p>令 $y$ 为 $Uv_c$ softmax输出的向量，$\hat{y}$ 为标签向量，形式为one-hot vector。则:</p>
+
+$$
+\frac{\partial J}{\partial \boldsymbol{v}_{c}}=U(\hat{\boldsymbol{y}}-\boldsymbol{y})
+$$
+或者其经过分配律后的式子：
+$$
+\frac{\partial J}{\partial \boldsymbol{v}_{c}}=-\boldsymbol{u}_{i}+\sum_{w=1}^{W} \hat{y}_{w} \boldsymbol{u}_{w}
+$$
+
+<blockquote>
+<p>(b) As in the previous part, derive gradients for the “output” word vectors $u_w$’s (including $u_o$).</p>
+</blockquote>
+<p>与(a)基本完全一致：</p>
+
+$$
+\frac{\partial J}{\partial \boldsymbol{U}}=\boldsymbol{v}_{c}(\hat{\boldsymbol{y}}-\boldsymbol{y})^{\top}
+$$
+
+<blockquote>
+<p>(c) Repeat part (a) and (b) assuming we are using the negative sampling loss for the predicted vector $v_c$, and the expected output word is $o$. Assume that K negative samples (words) are drawn, and<br>they are $1,\ldots, K$, respectively for simplicity of notation ($o \notin\{1, \ldots, K\}$ ). Again, for a given word, $o$,<br>denote its output vector as $u_o$. The negative sampling loss function in this case is<br>$$<br> J_{n e g-s a m p l e}\left(\boldsymbol{o}, \boldsymbol{v}_{c}, \boldsymbol{U}\right)=-\log \left(\sigma\left(\boldsymbol{u}_{o}^{\top} \boldsymbol{v}_{c}\right)\right)-\sum_{k=1}^{K} \log \left(\sigma\left(-\boldsymbol{u}_{k}^{\top} \boldsymbol{v}_{c}\right)\right) <br>$$</p>
+</blockquote>
+
+$$
+\begin{aligned} \frac{\partial J}{\partial \boldsymbol{v}_{c}} &=\left(\sigma\left(\boldsymbol{u}_{o}^{\top} v_{c}\right)-1\right) \boldsymbol{u}_{o}-\sum_{k=1}^{K}\left(\sigma\left(-\boldsymbol{u}_{k}^{\top} \boldsymbol{v}_{c}\right)-1\right) \boldsymbol{u}_{k} \\ \frac{\partial J}{\partial \boldsymbol{u}_{o}} &=\left(\sigma\left(\boldsymbol{u}_{o}^{\top} \boldsymbol{v}_{c}\right)-1\right) \boldsymbol{v}_{c} \\ \frac{\partial J}{\partial \boldsymbol{u}_{k}} &=-\left(\sigma\left(-\boldsymbol{u}_{k}^{\top} \boldsymbol{v}_{c}\right)-1\right) \boldsymbol{v}_{c}, \quad \text { for all } k=1,2, \ldots, K \end{aligned}
+$$
+
+<blockquote>
+<p>(d) Derive gradients for all of the word vectors for skip-gram and CBOW given the previous parts and given a set of context words  $[word_{c-m}, \ldots, word_{c-1}; word_c; word_{c+1}, \ldots word_{c+m}] $, where m is the context size. Denote the “input” and “output” word vectors for $word_k$ as $v_k$ and $u_k$ respectively.</p>
+</blockquote>
+<p>这里不妨使用$F(o, v_c)$ 代表  $J_{softmax-CE}(o, v_c, \ldots)$ 或 $J_{neg-sample}(o,v_c, \ldots)$ 。</p>
+
+
+对Skip-gram：
+$$
+\begin{array}{l}{\dfrac{\partial J_{\text {skip-gram }}\left(\text { word }_{c-m \ldots c+m}\right)}{\partial U}=\sum_{-m \leq j \leq m, j \neq 0} \dfrac{\partial F\left(\boldsymbol{w}_{c+j}, \boldsymbol{v}_{c}\right)}{\partial \boldsymbol{U}}} \\ {\dfrac{\partial J_{\text {skip-gram }}\left(\text { word }_{c-m \ldots c+m}\right)}{\partial \boldsymbol{v}_{c}}=\sum_{-m \leq j \leq m, j \neq 0} \dfrac{\partial F\left(\boldsymbol{w}_{c+j}, \boldsymbol{v}_{c}\right)}{\partial \boldsymbol{v}_{c}}} \\ {\dfrac{\partial J_{\text {skip-gram }}\left(\text { word }_{c-m \ldots c+m}\right)}{\partial \boldsymbol{v}_{j}}=0, \text { for all } j \neq c}\end{array}
+$$
+对CBOW：
+$$
+\begin{array}{l}{\dfrac{\partial J_{\mathrm{CBOW}}\left(\text { word }_{c-m \ldots c+m}\right)}{\partial U}=\dfrac{\partial F\left(\boldsymbol{w}_{c}, \hat{\boldsymbol{v}}\right)}{\partial \boldsymbol{U}}=\dfrac{\partial F\left(\boldsymbol{w}_{c}, \hat{\boldsymbol{v}}\right)}{\partial \boldsymbol{U}}, \quad \text { (using the definition of } \hat{\boldsymbol{v}} \text { in the problem) }} \\ {\dfrac{\partial J_{\mathrm{CBOW}}\left(\text { word }_{c-m, \ldots c+m}\right)}{\partial \boldsymbol{v}_{j}}=\dfrac{\partial F\left(\boldsymbol{w}_{c}, \hat{\boldsymbol{v}}\right)}{\partial \hat{\boldsymbol{v}}}, \quad \text { for all } j \in\{c-m, \ldots, c-1, c+1, \ldots, c+m\}} \\ {\dfrac{\partial J_{\mathrm{CBOW}}\left(\text { word }_{c-m, \ldots c+m}\right)}{\partial \boldsymbol{v}_{j}}=\mathbf{0}, \quad \text { for all } j \notin\{c-m, \ldots, c-1, c+1, \ldots, c+m\}}\end{array}
+$$
+
+
+
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                        </strong>
+                        <br>
+                        <strong>Link to this article: </strong><a href="https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/">https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://huangweiran.club/2018/08/30/CS-224N-Assignment-1/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//EtoDemerzel.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/02/时隔九月，更改博客外观配置/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/05/14/翻译：如何在Jupyter-notebook中安装Python包？/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://s1.ax1x.com/2018/09/03/PzuCZR.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://s1.ax1x.com/2018/09/03/PznIMQ.png" alt="Weiran Huang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huangweiran1998@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="huangweiran1998@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Literature/">Literature<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ML/">ML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/all/">all<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/math/">math<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/tech/">tech<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/wiki" title="Wiki">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                Wiki
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://huangweiran.club/online-cv/" title="Online CV">
+                
+                    <i class="material-icons sidebar-material-icons">portrait</i>
+                
+                Online CV
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">19</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/profile.php?id=100006603762815" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+        <a href="https://www.instagram.com/etodemerzel0427/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <span class="visuallyhidden">Instagram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/EtoDemerzel0427" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="https://www.linkedin.com/in/weiranhuang/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;My Trantor
+            
+                <br>
+                
+                    Act Justly, Love Mercy, Walk Humbly.
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//EtoDemerzel.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="https://cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2018;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

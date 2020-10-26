@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="en">
+    <head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://EtoDemerzel.disqus.com">
+
+
+
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.proxy.ustclug.org">
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            时隔九月，更改博客外观配置 | 
+        
+        My Trantor
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+    <link rel="icon" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Machine Learning Python Deep Data Mining Computer Science">
+    <meta name="keywords" content="Deep Learning Data Mining,hexo">
+    <meta name="theme-color" content="#3B4247">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.en.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?NKhlKQkXw/c66TR5p4wO+w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #378bc8;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #3B4247 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #3B4247 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #3B4247 !important;
+  }
+
+  .toTop {
+    background: #c1c4c6 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #c1c4c6;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #c1c4c6;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #c1c4c6;
+  }
+
+  .post-toc a:hover {
+    color: #378bc8;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.proxy.ustclug.org/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My Trantor">
+    <meta name="msapplication-starturl" content="https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/">
+    <meta name="msapplication-navbutton-color" content="#3B4247">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="My Trantor">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="Qdr-ePYrpfokzie4PUuT0TfVUd_cjS39wQt624NouvM">
+    <meta name="baidu-site-verification" content="qW1rbkxBrE">
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="时隔九月，更改博客外观配置 | My Trantor">
+    <meta property="og:image" content="https://s1.ax1x.com/2018/09/03/PznrKH.png">
+    <meta property="og:description" content="Machine Learning Python Deep Data Mining Computer Science">
+    <meta property="og:article:tag" content="hexo"> 
+
+    
+        <meta property="article:published_time" content="Sun Sep 02 2018 18:33:53 GMT+0800">
+        <meta property="article:modified_time" content="Thu Nov 22 2018 20:22:04 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html",
+    "headline": "时隔九月，更改博客外观配置",
+    "datePublished": "Sun Sep 02 2018 18:33:53 GMT+0800",
+    "dateModified": "Thu Nov 22 2018 20:22:04 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Weiran Huang",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://s1.ax1x.com/2018/09/03/PznIMQ.png"
+        },
+        "description": "My life of code, math and literature"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "My Trantor",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "https://s1.ax1x.com/2018/09/03/PznrKH.png"
+        }
+    },
+    "keywords": ",hexoDeep Learning Data Mining",
+    "description": "Machine Learning Python Deep Data Mining Computer Science",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-111871163-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<link rel="alternate" href="/atom.xml" title="My Trantor" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-ghcolors.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写在前面"><span class="post-toc-number">1.</span> <span class="post-toc-text">写在前面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主页"><span class="post-toc-number">2.</span> <span class="post-toc-text">主页</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#评论系统"><span class="post-toc-number">3.</span> <span class="post-toc-text">评论系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#许可证"><span class="post-toc-number">4.</span> <span class="post-toc-text">许可证</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#您可以自由地"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">您可以自由地:</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#惟须遵守下列条件："><span class="post-toc-number">4.2.</span> <span class="post-toc-text">惟须遵守下列条件：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码高亮"><span class="post-toc-number">5.</span> <span class="post-toc-text">代码高亮</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CDN加速"><span class="post-toc-number">6.</span> <span class="post-toc-text">CDN加速</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用TiddlyWiki"><span class="post-toc-number">7.</span> <span class="post-toc-text">使用TiddlyWiki</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加在线和可供下载的简历"><span class="post-toc-number">8.</span> <span class="post-toc-text">增加在线和可供下载的简历</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全站https"><span class="post-toc-number">9.</span> <span class="post-toc-text">全站https</span></a></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(https://s1.ax1x.com/2018/09/03/PzuH6e.png)">
+    
+            <p class="article-headline-p">
+                时隔九月，更改博客外观配置
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="https://s1.ax1x.com/2018/09/03/PznIMQ.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Weiran Huang</strong>
+        <span>Sep 02, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/hexo/">hexo</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=时隔九月，更改博客外观配置&url=https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html&pic=https://huangweiran.clubhttps://s1.ax1x.com/2018/09/03/PznrKH.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Weibo
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=时隔九月，更改博客外观配置&url=https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html&via=Weiran Huang" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html&title=时隔九月，更改博客外观配置" target="_blank">
+            <li class="mdl-menu__item">
+                Share to LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=My Trantor&title=时隔九月，更改博客外观配置&summary=Machine Learning Python Deep Data Mining Computer Science&pics=https://huangweiran.clubhttps://s1.ax1x.com/2018/09/03/PznrKH.png&url=https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                Share to QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>自从今年一月我建立起这个博客，我再没对博客进行任何外观上的更改。但实际上，当时的很多配置我自己是不太满意的。首先，整个主题的色调过于花俏，与我个人对简洁的偏爱不符；另外，我彼时使用的material主题版本过低，很多功能不够完善。</p>
+<p>明天就是开学日，想着开学之后我应该没有闲情来布置这些，因此我决定趁着最后一个放假日来做这样一件“毫无用处”的事情。</p>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><p>这是过去九个月里我博客的外观：</p>
+<p><img src="https://s1.ax1x.com/2018/09/03/Pzuzff.png" alt="prev"></p>
+<p>客观地说，它并不难看（要不然我也没法忍受它九个月），但实在非常随意。背景这张毛玻璃效果的图片是主题内置提供的，漂亮归漂亮，但是很难说有多少个人同时在使用它作为背景；标题框和Logo框中图片的选择就更随便了，我本人是巴塞罗那足球俱乐部的忠实拥趸，因此在标题框中就选择了巴塞罗那的一张风景图，而右边的Logo则直接使用了巴塞罗那历史上最伟大的球员——莱昂内尔·梅西的个人Logo，甚至你点击这个Logo网站还会自动跳转到梅西官网（这是多么无聊的设计）；至于颜色的选择我更是分毫未改地沿用了默认值，因为搭建博客时正值期末，我实在没空去干选颜色这么费时费力的事情。</p>
+<p>现在我对它的更改，如上所述，主要是使它看起来更简洁。我觉得只有简洁的东西才不会使人轻易看腻。首先我把背景换成了纯色（<code>#F5F5F5</code>)，并且把主题的色调换成了灰色（主：<code>#3B4247</code> 次：<code>#959FA6</code>）。然后我更换了那两张选择得非常随意的图片，用一种另外的随意方式。右侧这个我的个人Logo，事实上是我在一个免费生成Logo的网站画5分钟做的，虽然免费，但我还挺满意的；至于左侧这张图……可能比之前还要随意吧，这是我Google “Minimalism”搜出来的一张图片，万幸还挺合适。下面是现在的效果图：</p>
+<p><img src="https://s1.ax1x.com/2018/09/04/iSHrH1.png" alt="current"></p>
+<p>你可能还会注意到一些区别：</p>
+<ul>
+<li>在上一张图片里，我的名字是<strong><em>“Waiyin Wong”</em></strong>，而在这张里变成了<strong><em>“Weiran Huang”</em></strong>。需要指出的是，<strong><em>“Waiyin Wong”</em></strong>是我名字的粤语拼音（我先前以为它是威妥玛拼音，但并不是），而后者才是我姓名的标准汉语拼音。粤语拼音很有趣，但我本人并不说粤语，而且无论是我的网站名还是我的邮箱都使用的是汉语拼音，因此这里做一个统一。</li>
+<li>网站标题的 <strong><em>“My trantor”</em></strong> 变成了 <strong><em>“My Trantor”</em></strong>。<strong><em>Trantor</em></strong>是我非常喜欢的科幻小说《基地》系列中银河帝国的首都星球的名字（中文译名川陀），我给我的网站起名<strong><em>“My Trantor”</em></strong>也是希望这个博客能作为我精神世界的一颗”首都星“，记录我的经历和见识。毫无疑问，作为地名，<strong><em>Trantor</em></strong> 当然应该大写，之前没有纯粹是我的失误。</li>
+<li>网站副标题 <em>“My life of…”</em> 改为首字母大写，不必多提。</li>
+<li>我对Sidebar做了部分调整：更换了标题图，增加了Number of Articles一栏。</li>
+<li>在首页的footer位置（如下），我去掉了不常用的SNS——Google+，增加了Instagram和GitHub。在Copyright下增加了一句《圣经》中的引文：<em>“Act justly, love mercy, walk humbly”</em>。</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2018/09/03/PzKehV.png" alt="footer"></p>
+<p>其实大多数改动都非常细微，如果不特别记录一下可能我自己也忘了。这也是我写这篇看起来毫无意义的博客的目的：看看自己以前对博客做过什么，也挺有趣的。</p>
+<h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p>另一个比较大的改变是我更换了评论系统。显然，我的博客流量是微乎其微的，并不太会有人看，甚至评论。而当我使用Disqus这一在国内被墙了的评论系统时，这样的概率就更低了。作为一个写作者，总是会希望有读者能够和你互动的，哪怕读者不存在，我们也应该给他们的出现创造条件。因此我换用了Livere（来必力）作为我的评论系统，这次不会被墙啦。</p>
+<p>最后弱弱说一句，仅从外观来说，我更喜欢Disqus。</p>
+<p><strong>UPDATE ON OCT 9TH</strong>: 我再次将评论系统更换为了Valine。这个评论系统支持<strong>Markdown</strong>。</p>
+<p><strong>UPDATE ON OCT 14TH</strong>: 经过多次更换，我又把评论系统换回了Disqus……我必须认清一个事实，那就是我写的东西纯是自娱自乐所用，并没有人会和我互动，所以用哪个评论系统其实都无所谓；但其他评论系统实在太糟糕了，Gitment和Gittalk在移动端的体验不好，Valine的邮件通知功能又不完善。换来换去，Disqus还是最好用的一个，除去它被墙了这一个事实，但反正没人评论，那用哪个都一样了。</p>
+<h2 id="许可证"><a href="#许可证" class="headerlink" title="许可证"></a>许可证</h2><p>我为我的每篇博客增加了一份<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank" rel="noopener">CC BY-SA 3.0协议文本</a>许可证声明。这意味着，对我的所有文章：</p>
+<blockquote>
+<h3 id="您可以自由地"><a href="#您可以自由地" class="headerlink" title="您可以自由地:"></a>您可以自由地:</h3><ul>
+<li><strong>共享</strong> — 在任何媒介以任何形式复制、发行本作品</li>
+<li><strong>演绎</strong> — 修改、转换或以本作品为基础进行创作</li>
+</ul>
+<h3 id="惟须遵守下列条件："><a href="#惟须遵守下列条件：" class="headerlink" title="惟须遵守下列条件："></a>惟须遵守下列条件：</h3><ul>
+<li><strong>署名</strong> — 您必须给出<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh#" target="_blank" rel="noopener">适当的署名</a>，提供指向本许可协议的链接，同时<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh#" target="_blank" rel="noopener">标明是否（对原始作品）作了修改</a>。您可以用任何合理的方式来署名，但是不得以任何方式暗示许可人为您或您的使用背书。</li>
+<li><strong>非商业性使用</strong> — 您不得将本作品用于<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh#" target="_blank" rel="noopener">商业目的</a>。</li>
+<li><p><strong>相同方式共享</strong> — 如果您再混合、转换或者基于本作品进行创作，您必须基于<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh#" target="_blank" rel="noopener">与原先许可协议相同的许可协议</a> 分发您贡献的作品。</p>
+</li>
+<li><p><strong>没有附加限制</strong> — 您不得适用法律术语或者 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh#" target="_blank" rel="noopener">技术措施</a> 从而限制其他人做许可协议允许的事情。</p>
+</li>
+</ul>
+</blockquote>
+<p>具体条文请参考链接。</p>
+<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><p>之前我使用的代码高亮插件是<code>hexo-prism-plugin</code>。但这款插件的很多主题和material兼容性很差，最后使用效果非常糟糕，我几乎把所有主题都尝试了一遍，才选定<code>ghcolor</code>这一款主题。因此这次我本希望使用Prettify来做代码高亮。事实上我几乎已经做完了这件事，让文章中的代码块从：</p>
+<p><img src="https://s1.ax1x.com/2018/09/03/PzKlnJ.png" alt="cbp"></p>
+<p>变成了：</p>
+<p><img src="https://s1.ax1x.com/2018/09/03/PzKJtx.png" alt="cbc"></p>
+<p>不得不说Prettify的代码高亮还是挺好看的。但使用之后我才发现，相较Prism它有一个很严重的问题，那就是在移动端阅读时，如果一行代码无法显示完全，代码块是无法横向拖动的。这造成了移动端阅读体验不佳的问题，因此我最后还是换回了之前的样子。这是一个遗憾了。</p>
+<h2 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h2><p>material的新版本是提供CDN加速的，你可以直接在配置文件中做到这件事。</p>
+<p>你可以把博客的静态页面放在私人CDN上，也可以使用几个第三方库的CDN，包括：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Files Vendors</span>
+<span class="token comment" spellcheck="true"># Set a CDN for the files src you want to customize. The url should with protocol.</span>
+<span class="token comment" spellcheck="true"># Default(empty) will load the files from the origin server.</span>
+<span class="token key atrule">vendors</span><span class="token punctuation">:</span>
+<span class="token comment" spellcheck="true"># MaterialCDN</span>
+<span class="token comment" spellcheck="true">#   You can load theme unique files from your private cdn or oss.</span>
+<span class="token comment" spellcheck="true">#   The new src will have the base domain you configured below.</span>
+<span class="token comment" spellcheck="true">#   For example</span>
+<span class="token comment" spellcheck="true">#       materialcdn: https://cdn.jsdelivr.net/npm/hexo-material@1.4.0/source</span>
+    <span class="token key atrule">materialcdn</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true"># Third party library</span>
+<span class="token comment" spellcheck="true">#   You can load these files from public cdn.</span>
+<span class="token comment" spellcheck="true">#   For example</span>
+<span class="token comment" spellcheck="true">#       jquery: https://cdn.bootcss.com/jquery/2.2.1/jquery.js</span>
+    <span class="token comment" spellcheck="true"># jQuery 2.2.0</span>
+    <span class="token key atrule">jquery</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcss.com/jquery/2.2.1/jquery.js
+    <span class="token comment" spellcheck="true"># nprogress 0.2.0</span>
+    <span class="token key atrule">nprogress</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># FontAwesome 4.5.0</span>
+    <span class="token key atrule">fontawesome</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcss.com/font<span class="token punctuation">-</span>awesome/4.5.0/css/font<span class="token punctuation">-</span>awesome.min.css
+    <span class="token comment" spellcheck="true"># MathJax 2.7.0-2.7.1</span>
+    <span class="token key atrule">mathjax</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcss.com/mathjax/2.7.1/latest.js
+    <span class="token comment" spellcheck="true"># Prettify r298 (only prettify.js)</span>
+    <span class="token key atrule">prettify</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcss.com/prettify/r298/prettify.js
+    <span class="token comment" spellcheck="true"># Material Icons 3.0.1</span>
+    <span class="token key atrule">material_icons</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.bootcss.com/material<span class="token punctuation">-</span>design<span class="token punctuation">-</span>icons/3.0.1/iconfont/material<span class="token punctuation">-</span>icons.min.css
+</code></pre>
+<p>这里的<code>mathjax</code>是很值得一提的。Hexo的Markdown不支持数学公式，因此之前每次当博客里需要使用MathJax的时候，我都不得不在文章开头放上这么长一串来加载它：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/x-mathjax-config<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+MathJax<span class="token punctuation">.</span>Hub<span class="token punctuation">.</span><span class="token function">Config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+tex2jax<span class="token punctuation">:</span> <span class="token punctuation">{</span>inlineMath<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'\\('</span><span class="token punctuation">,</span><span class="token string">'\\)'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span> <span class="token attr-name">async</span>
+  <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.mathjax.org/mathjax/latest/MathJax.js?config<span class="token punctuation">=</span>TeX-MML-AM_CHTML<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>而现在使用了它的CDN，我可以直接在标题框中enable MathJax, 只需增加一行：<code>mathjax: true</code>即可。</p>
+<p>P.S.：但Hexo还有一个地方非常烦人，它会将MathJax中的<code>\</code>和<code>_</code>当作Markdown中的转义字符，导致你的公式显示失败；这时候除了去修改内置转义规则之外，只能通过强制禁止渲染来解决了。</p>
+<h2 id="使用TiddlyWiki"><a href="#使用TiddlyWiki" class="headerlink" title="使用TiddlyWiki"></a>使用TiddlyWiki</h2><blockquote>
+<p>Added on <em>Nov 21st</em>.</p>
+</blockquote>
+<p>TiddlyWiki是一款非常有趣的笔记软件，它仅有一个html页面，但你可以用它做几乎任何事。我目前用它来做一些细碎的记录以及学校课程的笔记，目前你已经可以通过博客Sidebar的wiki打开它。</p>
+<p>想要了解TiddlyWiki，请访问它的<a href="https://tiddlywiki.com/" target="_blank" rel="noopener">官方网站</a>。但我觉得这个官网的教程似乎不太user-friendly（也许是我的问题），在我初次接触的时候，是通过youtube上<a href="https://www.youtube.com/watch?v=ZMGpAW0z_Bo&amp;list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK" target="_blank" rel="noopener">这个</a>系列视频来学习的。当然看完之后你最好还是回到官网继续深入使用，看视频只是为了减缓你的learning curve。</p>
+<p>我现在使用的主题是material风格的，与我当下博客使用的主题很契合。</p>
+<p>另外提一下如何在hexo中加入html页面……因为hexo是会默认渲染source文件夹中的文件的，也就是说它只默认处理md文件。所以你需要在<code>_config.yml</code>中找到<code>skip_render</code>一项来阻止它渲染html文件。这个操作可以参见<a href="http://omimo.me/2017/04/16/customized%20page/" target="_blank" rel="noopener">这里</a>。</p>
+<h2 id="增加在线和可供下载的简历"><a href="#增加在线和可供下载的简历" class="headerlink" title="增加在线和可供下载的简历"></a>增加在线和可供下载的简历</h2><blockquote>
+<p>Added on <em>Nov 21st</em></p>
+</blockquote>
+<p>这两项的查看和下载链接我放在了About页面里（你可以通过Sidebar打开它）。Online-CV早几个月就弄了，不过里面内容一直没去好好整（现在也还没整，有一半是模板内容，主要原因是实在没什么经历和技能可写……）。</p>
+<p>PDF版本是上周申请暑研的时候临时拿一个模板改的。原模板没有Course Projects这一项，我强行加的，虽然知道加了也没什么用，但不写我的简历就真的……很空。希望明年这时候申请可以有更多东西可以写，让我去掉这些傻透了的Course Projects吧 :)。</p>
+<h2 id="全站https"><a href="#全站https" class="headerlink" title="全站https"></a>全站https</h2><p>几个月前GitHub宣布对GitHub Pages的自定义域名提供https服务，这需要修改域名解析的A record，然后在博客的repo里选择enforce https。但是由于我博客之前的图片都是托管在作业部落上，它并没有https。因此我花费了相当长的时间把博客里所有的图片都移动到提供https的图床里了。因此现在我的博客是一个非常安全的地方了。</p>
+<p>大概就是这些了，其他一些修改拼写错误的URL就不细说了。总之，这一波操作又成功夺走了我在实验室的一个悠长下午，但说真的还挺有意思的。这样看来，设计行业的工作（或者前端）好像还蛮有趣味性的？</p>
+
+        
+                <blockquote style="margin: 2em 0 0;padding: 0.5em 1em;border-left: 3px solid #F44336;background-color: #F5F5F5;list-style: none;">
+                    <p><strong>
+                         
+                            This blog is under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh" target="_blank">CC BY-NC-SA 3.0 Unported License</a>
+                        </strong>
+                        <br>
+                        <strong>Link to this article: </strong><a href="https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/">https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/</a>
+                    </p>
+                </blockquote>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://huangweiran.club/2018/09/02/时隔九月，更改博客外观配置/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+<script type="text/ls-javascript" id="disqus-thread-script">
+    queue.offer(function() {
+            (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document;
+                var s = d.createElement('script');
+                s.src = '//EtoDemerzel.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        });
+</script>
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/09/03/谈谈近况/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/08/30/CS-224N-Assignment-1/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(https://s1.ax1x.com/2018/09/03/PzuCZR.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="https://s1.ax1x.com/2018/09/03/PznIMQ.png" alt="Weiran Huang's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        huangweiran1998@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="huangweiran1998@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                Home
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    Archives
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2020/06/">June 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                Categories
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Literature/">Literature<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ML/">ML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/all/">all<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/math/">math<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/tech/">tech<span class="sidebar_archives-count">5</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/wiki" title="Wiki">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                Wiki
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="https://huangweiran.club/online-cv/" title="Online CV">
+                
+                    <i class="material-icons sidebar-material-icons">portrait</i>
+                
+                Online CV
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                Number of articles
+                <span class="sidebar-badge">19</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            Theme - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/profile.php?id=100006603762815" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+        <a href="https://www.instagram.com/etodemerzel0427/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-instagram">
+                <span class="visuallyhidden">Instagram</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/EtoDemerzel0427" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="https://www.linkedin.com/in/weiranhuang/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;My Trantor
+            
+                <br>
+                
+                    Act Justly, Love Mercy, Walk Humbly.
+                
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?Bn9UzEm8RrBSxqyZB0zPjA==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+<script id="dsq-count-scr" src="//EtoDemerzel.disqus.com/count.js" async></script>
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="https://cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 2018;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
