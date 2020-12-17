@@ -6,7 +6,7 @@
   <link href="https://huangweiran.club/atom.xml" rel="self"/>
   
   <link href="https://huangweiran.club/"/>
-  <updated>2020-06-02T18:51:00.000Z</updated>
+  <updated>2020-01-30T13:39:46.000Z</updated>
   <id>https://huangweiran.club/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>一个纯Python实现的DNN手写数字分类器</title>
-    <link href="https://huangweiran.club/2020/06/03/%E4%B8%80%E4%B8%AA%E7%BA%AFPython%E5%AE%9E%E7%8E%B0%E7%9A%84DNN%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E5%88%86%E7%B1%BB%E5%99%A8/"/>
-    <id>https://huangweiran.club/2020/06/03/%E4%B8%80%E4%B8%AA%E7%BA%AFPython%E5%AE%9E%E7%8E%B0%E7%9A%84DNN%E6%89%8B%E5%86%99%E6%95%B0%E5%AD%97%E5%88%86%E7%B1%BB%E5%99%A8/</id>
-    <published>2020-06-02T17:51:35.000Z</published>
-    <updated>2020-06-02T18:51:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="自动微分"><a href="#自动微分" class="headerlink" title="自动微分"></a>自动微分</h2><p>用深度学习框架来构建神经网络已经不是一件稀奇事，但一个深度学习框架是如何工作的如今很多人是并不清楚也并不关心的。按如今的定义，这属于一个新兴领域的范畴，机器学习系统（Mlsys），是一个与机器/深度学习与系统都紧密相关的交叉学科，如今正在如火如荼地发展。与“系统”相关的话题总是无法避开各种工程上的复杂技巧和优化手段，但深度学习框架的本质在我看来依然是一个非常简单的概念：<strong>自动微分（automatic differentiation，或autodiff）</strong>。</p><p>什么是自动微分？以下定义摘自多伦多大学CS321（这门课的涵盖范围广泛得让人震惊）的<a href="http://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/slides/lec10.pdf" target="_blank" rel="noopener">讲义</a>：</p><blockquote><p>Automatic differentiation (autodiff) refers to a general way of taking a program which computes a value, and automatically constructing a procedure for computing derivatives of that value.</p></blockquote><p>换言之，”自动微分“其实并非某一项具体技术的名字，它更像是一类问题，这类问题要求我们提供一种自动求导的方法。而我们所熟知的反向传播（Backprop）就是解决这类问题的一个具体方案，在机器学习领域，反向传播和自动微分基本上是等同的概念。我们假设读者都大致了解反向传播的原理，这里不做详细介绍。</p><p>现代的深度学习框架大多基于计算图，其中包括静态图和动态图，静态图的代表作品是Tensorflow1.x，而动态图则以Pytorch为首。它们的操作粒度是单个op。有的早期的深度学习框架则采用了不同的设计，如Caffe。</p><p>Caffe的设计哲学是系统级的抽象。设计者注意到神经网络的基本组成单元是层（layers），如卷积层、池化层、dropout层等等。这些层的计算方式各不相同，但是抽象出来，其本质都是一个”接受输入-计算-输出结果“的模块。因此熟悉面向对象变成的读者不难想象Caffe的实现方式，简单来说，Caffe实现了一个layer基类，并通过继承实现了许多不同的layer；将layers和数据进一步组合封装，就成了Net类。我认为这样的设计在工程上是非常合理，且优美的。这个设计思路对我们实现本篇的DNN结构是最简单方便的，因此我们决定，使用与Caffe类似的以层为粒度的设计方法以及与Pytorch类似的前端接口来做我们这次的玩具级别的小项目。</p><h2 id="为什么要写这个项目？"><a href="#为什么要写这个项目？" class="headerlink" title="为什么要写这个项目？"></a>为什么要写这个项目？</h2><p>这个项目（以它的代码量我觉得称作项目稍显夸大）是我另一个玩具级别项目的热身项目，是我正式开始前的小练习。</p><h2 id="问题和模型"><a href="#问题和模型" class="headerlink" title="问题和模型"></a>问题和模型</h2><p>这基本上是深度学习的hello world问题了，简单来说，这个问题判断一张黑白像素图上写的数字是0-9中的哪一个。关于MNIST这个数据集的介绍可以参考<a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">这里</a>，而为了省事，我们选用了<a href="https://pjreddie.com/projects/mnist-in-csv/" target="_blank" rel="noopener">这个</a>处理为CSV格式的版本。</p><p>这是个简单的问题，使用传统机器学习也能达到比较高的准确率。这里我们并不打算采用多么复杂的结构，事实上，我采用的是一个很简单的DNN模型：6层全连接层，激活函数均为ReLU，最后接入softmax，以交叉熵为loss，进行分类。优化器是简单的SGD，没有使用dropout等技巧。</p><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>由于模型简单，项目结构自然也是一目了然，几乎可以望文生义：</p><ul><li><code>Activations.py</code>：激活函数。</li><li><code>Initializers.py</code>：初始化方式。</li><li><code>Layers.py</code>：不同的层。</li><li><code>nn.py</code>：神经网络相关，在我们的项目里仅有<code>DNNClassifier</code>的实现。</li><li><code>Loss.py</code>：损失函数。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;自动微分&quot;&gt;&lt;a href=&quot;#自动微分&quot; class=&quot;headerlink&quot; title=&quot;自动微分&quot;&gt;&lt;/a&gt;自动微分&lt;/h2&gt;&lt;p&gt;用深度学习框架来构建神经网络已经不是一件稀奇事，但一个深度学习框架是如何工作的如今很多人是并不清楚也并不关心的。按如今的定义</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>Bash Tutorial</title>
@@ -191,9 +171,9 @@
     <category term="Python" scheme="https://huangweiran.club/categories/Python/"/>
     
     
-    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
-    
     <category term="programming" scheme="https://huangweiran.club/tags/programming/"/>
+    
+    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
     
   </entry>
   
@@ -214,9 +194,9 @@
     <category term="Python" scheme="https://huangweiran.club/categories/Python/"/>
     
     
-    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
-    
     <category term="programming" scheme="https://huangweiran.club/tags/programming/"/>
+    
+    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
     
   </entry>
   
@@ -237,9 +217,9 @@
     <category term="Python" scheme="https://huangweiran.club/categories/Python/"/>
     
     
-    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
-    
     <category term="programming" scheme="https://huangweiran.club/tags/programming/"/>
+    
+    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
     
   </entry>
   
@@ -286,9 +266,9 @@
     <category term="Python" scheme="https://huangweiran.club/categories/Python/"/>
     
     
-    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
-    
     <category term="programming" scheme="https://huangweiran.club/tags/programming/"/>
+    
+    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
     
   </entry>
   
@@ -312,9 +292,9 @@
     <category term="math" scheme="https://huangweiran.club/categories/math/"/>
     
     
-    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
-    
     <category term="programming" scheme="https://huangweiran.club/tags/programming/"/>
+    
+    <category term="learning" scheme="https://huangweiran.club/tags/learning/"/>
     
   </entry>
   
