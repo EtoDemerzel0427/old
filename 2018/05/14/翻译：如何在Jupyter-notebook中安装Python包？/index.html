@@ -246,7 +246,7 @@
 
     
         <meta property="article:published_time" content="Mon May 14 2018 14:40:16 GMT+0800">
-        <meta property="article:modified_time" content="Mon Sep 03 2018 11:47:32 GMT+0800">
+        <meta property="article:modified_time" content="Tue Jun 29 2021 15:55:20 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,7 +269,7 @@
     "mainEntityOfPage": "https://huangweiran.club/2018/05/14/翻译：如何在Jupyter-notebook中安装Python包？/index.html",
     "headline": "翻译：如何在Jupyter notebook中安装Python包？",
     "datePublished": "Mon May 14 2018 14:40:16 GMT+0800",
-    "dateModified": "Mon Sep 03 2018 11:47:32 GMT+0800",
+    "dateModified": "Tue Jun 29 2021 15:55:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Weiran Huang",
@@ -523,7 +523,7 @@
 <blockquote>
 <p>我安装了<em>XX包</em> 但是我不能在notebook中导入它，谁能帮帮我？</p>
 </blockquote>
-<p>这个问题多年来在StackOverflow上盛久不衰 (比如 <a href="https://stackoverflow.com/questions/39007571/running-jupyter-with-multiple-python-and-ipython-paths/" target="_blank" rel="noopener">这一个</a>, <a href="https://stackoverflow.com/questions/42500142/importerror-no-module-named-jwt-in-jupyter" target="_blank" rel="noopener">这一个</a>, 还有<a href="https://stackoverflow.com/questions/32777807/importerror-no-module-named-cv2-using-jupyter" target="_blank" rel="noopener">这个</a>, 和<a href="https://stackoverflow.com/questions/42500649/failed-to-import-numpy-as-np-when-i-worked-with-jupyter-notebook" target="_blank" rel="noopener">这个</a>, <a href="https://stackoverflow.com/questions/46634660/jupyter-notebook-wrong-sys-path-and-sys-executable" target="_blank" rel="noopener">这个</a>, <a href="https://stackoverflow.com/questions/44222513/cannot-import-datashader-installed-using-miniconda" target="_blank" rel="noopener">这个</a>, 以及<a href="https://stackoverflow.com/questions/42178070/jupyter-notebook-importerror-no-module-named-sklearn" target="_blank" rel="noopener">这一个</a>, 和<a href="https://stackoverflow.com/questions/42034508/fail-pandas-in-python3-jupyter-notebook" target="_blank" rel="noopener">这个</a>… etc.)。</p>
+<p>这个问题多年来在StackOverflow上盛久不衰 (比如 <a href="https://stackoverflow.com/questions/39007571/running-jupyter-with-multiple-python-and-ipython-paths/" target="_blank" rel="noopener">问题A</a>, <a href="https://stackoverflow.com/questions/42500142/importerror-no-module-named-jwt-in-jupyter" target="_blank" rel="noopener">问题B</a>, 还有<a href="https://stackoverflow.com/questions/32777807/importerror-no-module-named-cv2-using-jupyter" target="_blank" rel="noopener">问题C</a>, 和<a href="https://stackoverflow.com/questions/42500649/failed-to-import-numpy-as-np-when-i-worked-with-jupyter-notebook" target="_blank" rel="noopener">问题D</a>, <a href="https://stackoverflow.com/questions/46634660/jupyter-notebook-wrong-sys-path-and-sys-executable" target="_blank" rel="noopener">问题E</a>, <a href="https://stackoverflow.com/questions/44222513/cannot-import-datashader-installed-using-miniconda" target="_blank" rel="noopener">问题F</a>, 以及<a href="https://stackoverflow.com/questions/42178070/jupyter-notebook-importerror-no-module-named-sklearn" target="_blank" rel="noopener">问题G</a>, 和<a href="https://stackoverflow.com/questions/42034508/fail-pandas-in-python3-jupyter-notebook" target="_blank" rel="noopener">问题H</a>… etc.)。</p>
 <p>从本质上来说，这个问题通常源于这么一个事实：<strong>Jupyter的内核（kernel）和Jupyter的壳（shell）是不相连的</strong>；换句话说，安装程序指向的是另一个Python的版本，而非你在notebook中使用的那一个。<br>在最简单的情况下这种问题并不会出现，但一旦它出现了，解决这个问题就需要你具有关于操作系统、Python包的安装、以及Jupyter本身的相关知识。<br>换言之，Jupyter notebook，与其他所有的抽象化的软件一样，也存在漏洞。</p>
 <p>在与同事们针对这个问题进行了一些讨论后——有的是线上(这是我们两次线上讨论的链接：<a href="https://twitter.com/amuellerml/status/932637063748444160" target="_blank" rel="noopener">讨论 A</a>, <a href="https://twitter.com/jakevdp/status/922846245848150016" target="_blank" rel="noopener">讨论 B</a>)， 有的是线下——我决定在这里对这个问题进行一些深入的讲解。</p>
 <p>这篇博文旨在阐述清楚以下内容：</p>
@@ -944,14 +944,6 @@ numpy                     1.13.3           py36h2cdce51_0
 
     <!-- Next Nav -->
     
-        <a href="/2018/05/09/教程：如何配置深度学习服务器/" id="post_nav-older" class="next-content">
-            Older
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
 </nav>
 
         </div>
@@ -1036,7 +1028,7 @@ numpy                     1.13.3           py36h2cdce51_0
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">December 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -1054,7 +1046,7 @@ numpy                     1.13.3           py36h2cdce51_0
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Literature/">Literature<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ML/">ML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/all/">all<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/math/">math<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/tech/">tech<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/categories/Literature/">Literature<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ML/">ML<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/NLP/">NLP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/all/">all<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/math/">math<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/tech/">tech<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -1098,7 +1090,7 @@ numpy                     1.13.3           py36h2cdce51_0
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">18</span>
+                <span class="sidebar-badge">9</span>
             </a>
         </li>
         
