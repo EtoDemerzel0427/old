@@ -245,8 +245,8 @@
     <meta property="og:article:tag" content="project"> <meta property="og:article:tag" content="coding"> 
 
     
-        <meta property="article:published_time" content="Thu Aug 05 2021 12:00:11 GMT+0800">
-        <meta property="article:modified_time" content="Sat Aug 28 2021 04:31:37 GMT+0800">
+        <meta property="article:published_time" content="Thu Aug 05 2021 12:00:11 GMT-0500">
+        <meta property="article:modified_time" content="Sat Aug 28 2021 05:51:52 GMT-0500">
     
 
     <!-- The Twitter Card protocol -->
@@ -268,8 +268,8 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://huangweiran.club/2021/08/05/玩具项目计划/index.html",
     "headline": "玩具项目计划",
-    "datePublished": "Thu Aug 05 2021 12:00:11 GMT+0800",
-    "dateModified": "Sat Aug 28 2021 04:31:37 GMT+0800",
+    "datePublished": "Thu Aug 05 2021 12:00:11 GMT-0500",
+    "dateModified": "Sat Aug 28 2021 05:51:52 GMT-0500",
     "author": {
         "@type": "Person",
         "name": "Weiran Huang",
@@ -511,7 +511,7 @@
     
         <p>最近觉得有必要在日常工作之余写一些娱乐为主的toy project，一来是给无聊的生活找找乐子，二来也保持一下自己的编程手感。</p>
 <p>选择要写什么项目主要有两点原则：第一，既然是“toy”，那么就必须得好玩；第二，最好能锻炼或者学习一些之前不熟或者根本不会的新技能。</p>
-<p>目前我已经写完了第一个项目（虽然还有一些附加功能没有加上），正在进行第二个项目。这篇博客的目的就是记录下这些项目的思路、实现过程、技术难点等。希望可以写非常长，但目前为止我立的flag好像从未实现过。</p>
+<p>目前我已经写完了前两个项目。这篇博客的目的就是记录下这些项目的思路、实现过程、技术难点等。希望可以写非常长，但目前为止我立的flag好像从未实现过。</p>
 <h2 id="ANSI-art"><a href="#ANSI-art" class="headerlink" title="ANSI-art"></a>ANSI-art</h2><p>这个项目的代码已经开源在Github上，使用的编程语言是我最近很喜欢的Go，地址在<a href="https://github.com/EtoDemerzel0427/ANSI-art" target="_blank" rel="noopener">这里</a>。</p>
 <p>它的主要功能是让一张这样的图片:</p>
 <p><img src="https://github.com/EtoDemerzel0427/ANSI-art/blob/master/pic/messi.png?raw=true" alt="messi.png"></p>
@@ -626,9 +626,9 @@
 <p>原本前端部分我并不打算用React。看到ascii-fluid使用的Go-WebAssembly之后，我原本打算对他的代码照（直）猫（接）画（复）虎（用），顺便了解一下wasm。而原作者自己看上去非常喜欢Go的WebAssembly方案（尽管性能堪忧），在他维护的数个repo中都使用了同一段go-WebAssembly代码来调用Webcam，而他也一直没有意识到这之间藏着的巨大隐患。</p>
 <p>Go的wasm学起来就很不舒服，因为写起来几乎就像是在写js的go binding，没有我想象中更高抽象度的封装，因此写起来的体验也许甚至不如纯js。</p>
 <p>而更可怕的是，我很快就发现了原作者的一个致命bug：打开webcam后大概一分钟，浏览器的内存狂飙几个G，然后网页直接crash。</p>
-<p>采用了经典的注释Debug法后，我把问题定位到了syscall/js提供的CopyBytesToGo上。在实现里我们以几十FPS的频率将webcam的帧数据从前端传到后端，在这个过程中我们用CopyBytesToGo将js的uint8array转换为Go的slices。</p>
+<p>采用了经典的注释Debug法后，我把问题定位到了syscall/js提供的CopyBytesToGo上。在实现里我们以几十FPS的频率将webcam的帧数据从前端传到后端，在这个过程中需要用CopyBytesToGo将js的uint8array转换为Go的slices。</p>
 <p>和原作者讨论后，我们觉得问题出在GC上。像Go这样的自动GC语言让编程者不用亲自处理内存的申请和释放，但另一方面也让编程者失去了对内存的直接控制。就这个特定场景而言，似乎是因为我们无法控制内存释放的时间。</p>
-<p>如果我们以每秒60帧从webcam抽取640x480的图片，那么一秒钟我们会有70多MB数据，如果这些内存不被及时释放，一分钟时间内将需要4GB以上的开销。这也和我观察的一致：运行期间我通过activity monitor看到在程序崩掉的一分钟内，浏览器内存占用从2GB暴增到6GB多。——显然这个“如果”已经成真，但由于Go是自动GC，我们甚至无法手动释放这部分内存。</p>
+<p>假设我们以每秒60帧从webcam抽取640x480的图片，那么一秒钟我们会有70多MB数据，如果这些内存不被及时释放，一分钟时间内将需要4GB以上的开销。这也和我观察的一致：运行期间我通过activity monitor看到在程序崩掉的一分钟内，浏览器内存占用从2GB暴增到6GB多。——显然这个“如果”已经成真，但由于Go是自动GC，我们甚至无法手动释放这部分内存。</p>
 <p>刚才提到那位原作者维护了数个重用了这部分代码的repo，其中有一个甚至有3k+ star，但在我发现这个问题之前他从未意识到存在这样一个bug。尝试优化了几天之后，他意识到自己无法解决它，因此这个问题成为了Golang官方repo下的一个issue，而我转头学React去了。</p>
 <p>自动GC语言的弊端并不罕见。去年二月，Discord宣布全面从Go语言转为Rust（如图一）。因为他们发现由于Go每两分钟的GC，他们服务的延迟和CPU的使用率每两分钟都要经历一次spike；而切换了无GC性能又好的Rust之后，问题解决了（如图二，蓝色的是Rust，紫色的是Go）。无独有偶，LinkedIn也在2016年发博客表示因为JVM的GC logging被后台IO阻塞，他们许多在线服务的线程全都被迫停止（如图三）。</p>
 <p><img src="https://i.loli.net/2021/08/28/Mv2pkbzwaN87SJj.png" alt="351630091419_.pic_hd.jpg" style="zoom: 33%;"></p>
@@ -693,6 +693,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2021/10/21/等下一个天亮/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Newer
+        </a>
     
 
     <!-- Section Spacer -->
@@ -792,7 +800,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2021/10/">October 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/08/">August 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2021/06/">June 2021<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">November 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">October 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">June 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">November 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">September 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">August 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -854,7 +862,7 @@
         <li>
             <a href="/archives">
                 Number of articles
-                <span class="sidebar-badge">10</span>
+                <span class="sidebar-badge">11</span>
             </a>
         </li>
         
