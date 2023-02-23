@@ -172,13 +172,6 @@
   </url>
   
   <url>
-    <loc>https://huangweiran.club/tags/translation/</loc>
-    <lastmod>2023-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://huangweiran.club/tags/project/</loc>
     <lastmod>2023-02-23</lastmod>
     <changefreq>daily</changefreq>
@@ -187,6 +180,13 @@
   
   <url>
     <loc>https://huangweiran.club/tags/coding/</loc>
+    <lastmod>2023-02-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://huangweiran.club/tags/translation/</loc>
     <lastmod>2023-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
